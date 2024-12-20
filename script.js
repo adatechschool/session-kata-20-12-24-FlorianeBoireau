@@ -13,13 +13,11 @@
 // Vous devez écrire au moins 3 fonctions pour gérer :
 
 
-const playerCode = [] 
-const arrayColors = ["red", "yellow", "blue", "orange", "green", "white", "purple", "pink" ]
-const secretCode = ["blue", "red", "yellow", "green"]
 
 // Si la proposition est bien composée uniquement des 4 couleurs possibles et rien d’autre
 function verifiedNumberColors(playCode) {
-    playcode = []
+    playCode = []
+
     for(let i = 0; i < playCode.length; i ++) {
         if(playCode.length <= 4) {
             return playCode
@@ -28,14 +26,37 @@ function verifiedNumberColors(playCode) {
         }
     }
 }
-console.log(verifiedNumberColors(["green", "red", "yellow", "blue"]))
+// console.log(verifiedNumberColors(["green", "red", "yellow", "blue"]))
+
+// vérifie que se sont bien les couleurs du tableau du jeu et non d'autres mots ou couleurs
+function verifiedColors(playCode) {
+    const arrayColors = ["red", "yellow", "blue", "orange", "green", "white", "purple", "pink" ]
+    playCode = []
+    for (const i of arrayColors) {
+        if(playCode[i] === arrayColors[i]) {
+            console.log(playCode)
+            return true
+        }
+        for(const i of playCode) {
+            if(playCode[i] === arrayColors[i]) {
+                return true
+            }
+        }
+        return playCode
+    }
+    console.log(playCode)
+}
+
+console.log(verifiedColors(["blue", "black", "yellow", "green"]))
 
 // Une fonction qui retourne true ou false si la bonne combinaison est trouvée ou non
-function goodCombination() {
+function goodCombination(playCode,secretCode) {
+    secretCode = ["blue","red", "yellow", "green"]
+    playCode = []
 
 }
 
 // Une fonction qui gère la partie (continuer tant que/fin si gagné)
-function playGame() {
+function playGame(playcode) {
 
 }
